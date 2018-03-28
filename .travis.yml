@@ -19,7 +19,10 @@ addons:
     - libglm-dev
     - libcminpack-dev
     - libglew-dev
+    - python-dev
 script:
+ - python-config --ldflags
+ - python-config --cflags
  - mkdir build; cd build
  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
      cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="~/OpenVSP_Install" -DVSP_INSTALL_API_TEST=true ../SuperProject;

@@ -19,7 +19,7 @@ addons:
     - libglm-dev
     - libcminpack-dev
     - libglew-dev
-    - glibc
+    - libc6
     - swig
     - python-dev
 script:

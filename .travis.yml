@@ -19,6 +19,7 @@ addons:
     - libglm-dev
     - libcminpack-dev
     - libglew-dev
+    - swig
     - python-dev
 script:
  - export PYTHON_LIBRARY=$(python-config --ldflags|cut -d' ' -f1|cut -c3-)/lib$(python-config --ldflags|cut -d' ' -f3|cut -c3-).so

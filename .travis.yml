@@ -23,12 +23,10 @@ addons:
     - swig
     - python-dev
 script:
- - find / -name libpthread.so
- - exit 1
  - export PYTHON_LIBRARY=$(python-config --ldflags|cut -d' ' -f1|cut -c3-)/lib$(python-config --ldflags|cut -d' ' -f3|cut -c3-).so
  - export PYTHON_INCLUDE_DIR=$(python-config --cflags|cut -d' ' -f1|cut -c3-)
  - export PYTHON_INCLUDE_PATH=$(python-config --cflags|cut -d' ' -f1|cut -c3-)
- - cp /usr/lib/libpthread.so $(python-config --ldflags|cut -d' ' -f1|cut -c3-)
+ - cp /usr/lib/x86_64-linux-gnu/libpthread.so $(python-config --ldflags|cut -d' ' -f1|cut -c3-)
  
  - mkdir build; cd build
  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
